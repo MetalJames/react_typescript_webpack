@@ -1,7 +1,14 @@
-import React from 'react'
+import React from 'react';
+import './styles.css';
+import IMAGE from './react.png';
+import LOGO from './react-2.svg';
 
 export const App = () => {
     return (
-        <h1>React Typescript Webpack Starter Template</h1>
+        <>
+            <h1>React Typescript Webpack Starter Template</h1>
+            <img src={IMAGE} alt='react logo' width='300' height='200' />
+            <img src={LOGO} alt='react logo' width='300' />
+        </>
     )
 }
