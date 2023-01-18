@@ -5,6 +5,7 @@ import LOGO from './react-2.svg'
 import { ClickCounter } from './ClickCounter'
 
 export const App = () => {
+  const name = 'VOVA'
   return (
     <>
       <h1>
