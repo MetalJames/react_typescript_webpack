@@ -1,0 +1,51 @@
+How to create react js + typescript + web pack 5
+
+1. Create src and build folder
+2. Create .gitignor(add to it build and node_modules)
+3. in src create index.html and add id=root to body in div tag
+4. npm init
+5. npm add react react-dom
+6. npm add -D typescript @types/react @types/react-dom
+7. In root of project create file tsconfig.json and copy setup files
+8. in root create index.tsx and enter basic lines of code
+9. npm add -D @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript
+10. Create in root folder babelrc and copy basic metal info
+11. In root folder create webpack folder and  - npm add -D webpack webpack-cli webpack-dev-server html-webpack-plugin 
+12. npm add -D babel-loader
+13. In root folder create a webpack folder, inside it create webpack.config.js and copy template code
+14. Add npm script to run project and run commands npm start(if app will not run - npm install @babel/plugin-transform-runtime)
+15. In root folder create styles.css and to use it we need to install 2 loaders to be able to use css files
+16. npm add -D css-loader style-loader and add them to webpack.config.js(test:/\.css$/), use:[‘style-loader’, ‘css-loader’] 
+17. Try to add image - in source folder create declarations.d.ts(place inside - declare module '*.png’)
+18. Add new rule to webpack.config.js(test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource’,)
+19. Add svg and add to declarations - declare module '*.svg'
+20. Add appropriate module in webpack(test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: ‘asset/inline’,)
+21. Configure webpack for multiple environment
+22. Rename web pack.config.js into webpack.common.js and remove mode:’development’ from it. Also create 3 new files in webpack folder: webpack.prod.js, webpack.dev.js, webpack.config.js
+23. Adding the dev and prog configuration 
+24. We are going to populate webpack.config.js file which will merge common config file with either dev or prod config file
+25. npm add -D webpack-merge and configure webpack.config.js
+26. Add separate scripts for our dev and prod files and modify start in package.json
+27. To sum - first define a common configuration then separate the dev and the prod env configs with development and production mods then pass eviranmental variables and use the same to merge the common config with the env config - this is pretty much how to configure webpack to multiple environments
+28. React refresh feature - implement click counter in application
+29. Install react refreshwebpack plugin by - npm install -D @pmmmwh/react-refresh-webpack-plugin react-refresh
+30. Update our webpack setup - dev.js(devServer: {hot:true} and import ReactRefreshWebpackPlugin and add it to plugins
+31. Improving developer experience by installing ESlint - npm install -D eslint
+32. Add additional packages that support the library - npm install -D eslint-plugin-react eslint-plugin-react-hooks
+33. Install ESLint for VSCode
+34. As this is a typescript app - we need to add 2 more packages - npm install -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+35. Define eslint configuration file - new file in root .eslintrc.js and paste needed content
+36. Add some more eslint plugins - npm install -D eslint-plugin-import eslint-plugin-jsx-a11y (supports es6+ and prevents issues with misspelling of file parts and import names(a11y adds accessability standarts into application in real time))
+37. Modify extends property in.eslintrc.js ('plugin:import/errors', 'plugin:import/warnings', 'plugin:import/typescript’,) for the 11y('plugin:jsx-a11y/recommended',)
+38. Add another script to package.json ()
+39. Install Prettier???( npm install -D prettier eslint-config-prettier eslint-plugin-prettier )
+40. Manual configure prettier by creating configure file .prettierrc.js
+41. Update eslint config file
+42. (Prevent committing code with errors) npm install add -D husky@4 lint-staged
+43. Define lint staged tool configuration
+44. Add babel runtime and babel transform plugin runtime
+45. Update babelrc file
+46. Install copy-webpack-plugin
+47. Install webpack-bundle-analyzer - helps to analyze sizes of different files and helps visualize output of webpack files
+48. Update prod js file with analyzer required information
+49. Run testing command npm build
